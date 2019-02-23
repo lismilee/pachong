@@ -9,7 +9,6 @@ class SpbennsSpider(scrapy.Spider):
         self.url='http://hf.58.com/chuzu/0/pn{}'
     def start_requests(self):
         url = self.url.format(self.page)
-        #url='https://www.wdzj.com/dangan/search?filter=e1&currentPage=3'
         yield scrapy.Request(url=url,callback=self.parse,meta={'po':self.page}) 
 
 
